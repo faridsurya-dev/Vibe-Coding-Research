@@ -10,11 +10,11 @@ Tujuan utama Chain of Truth adalah meningkatkan **traceability, consistency, rep
 
 Chain of Truth terdiri dari tujuh fase utama yang membentuk rantai Source of Truth dari ide hingga perangkat lunak yang siap dirilis.
 
-![[https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Chain%20of%20Truth%20Software%20Dev%20Method-Page-1.drawio.png]]
+![](https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Chain%20of%20Truth%20Software%20Dev%20Method-Page-1.drawio.png)
 
 ### 1. Software Requirements Specification (SRS)
 
-Fase pertama menerjemahkan ide produk, kebutuhan bisnis, dan kebutuhan pengguna menjadi dokumen requirement yang terstruktur.
+[[Fase 1 - Pengembangan SRS]] menerjemahkan ide produk, kebutuhan bisnis, dan kebutuhan pengguna menjadi dokumen requirement yang terstruktur.
 
 Output dari fase ini adalah **Validated SRS (SoT #1)** yang menjadi dasar bagi seluruh artefak berikutnya.
 
@@ -22,11 +22,11 @@ Output dari fase ini adalah **Validated SRS (SoT #1)** yang menjadi dasar bagi s
 
 ### 2. Product Structure Development
 
-Pada fase ini, SRS dipecah menjadi tiga artefak utama:
+Pada [[Fase 2 - Product Structure Development]], SRS dipecah menjadi tiga artefak utama:
 
 - Information Architecture (IA)
-- Design System    
-- User Flows    
+- Design System
+- User Flows
 
 Ketiganya dikembangkan dan divalidasi secara terpisah.
 
@@ -40,7 +40,7 @@ Output fase ini adalah:
 
 ### 3. High Fidelity Prototype Development
 
-User Flow, IA, dan Design System digunakan untuk menghasilkan prototype yang menyerupai produk akhir.
+User Flow, IA, dan Design System digunakan untuk menghasilkan prototype yang menyerupai produk akhir. Tiga SoT itu digunakan untuk pengembangan [[Fase 3 - High-Fidelity Prototype Development]].
 
 Prototype digunakan untuk memvalidasi alur penggunaan dan pengalaman pengguna sebelum proses coding dimulai.
 
@@ -50,7 +50,7 @@ Output fase ini adalah **Validated HiFi Prototype (SoT #5)**.
 
 ### 4. Data Model Development
 
-Fase ini menghasilkan model data berdasarkan User Flow yang telah divalidasi.
+Fase [[Fase 4 - Data Model Development]] menghasilkan model data berdasarkan User Flow yang telah divalidasi.
 
 Data Model mendefinisikan:
 
@@ -66,7 +66,7 @@ Output fase ini adalah **Validated Data Model (SoT #6)**.
 
 ### 5. Use Case Integration Contract (UCIC) Development
 
-UCIC adalah kontrak integrasi pada level use case yang menyelaraskan frontend, backend, API, dan testing.
+[[Fase 5 - Use Case Integration Contract (UCIC) Development]] adalah fase untuk pengembangan artefak integrasi sistem. UCIC adalah kontrak integrasi pada level use case yang menyelaraskan frontend, backend, API, dan testing.
 
 Setiap UCIC mendefinisikan:
 
@@ -82,7 +82,7 @@ Output fase ini adalah **Validated UCIC (SoT #7)**.
 
 ### 6. Implementation
 
-Fase implementasi mengubah seluruh Source of Truth menjadi perangkat lunak yang berjalan.
+[[Fase 6 - Implementation]] mengubah seluruh Source of Truth menjadi perangkat lunak yang berjalan.
 
 - Frontend dibangun berdasarkan HiFi Prototype dan UCIC.    
 - Backend dibangun berdasarkan Data Model dan UCIC.    
@@ -92,7 +92,7 @@ Fase implementasi mengubah seluruh Source of Truth menjadi perangkat lunak yang 
 
 ### 7. Testing
 
-Fase terakhir memverifikasi bahwa implementasi sesuai dengan seluruh Source of Truth.
+[[Fase 7 - Testing and Validation]] memverifikasi bahwa implementasi sesuai dengan seluruh Source of Truth.
 
 Testing dibuat berdasarkan:
 

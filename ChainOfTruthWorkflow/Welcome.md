@@ -14,5 +14,4 @@ Chain of Truth adalah pendekatan pengembangan perangkat lunak berbantuan AI yang
 
 Website ini adalah dokumentasi terbuka dari gagasan tersebut. Saya berharap Chain of Truth dapat menjadi salah satu alternatif bagi tim yang ingin membangun perangkat lunak dengan AI secara lebih terstruktur, dapat ditelusuri, dan dapat dipercaya.
 
-**Farid Suryanto**  
-Penggagas Chain of Truth
+**Farid Suryanto**

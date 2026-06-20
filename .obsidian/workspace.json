@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ChainOfTruthWorkflow/Konsep/Apa itu Chain of Truth.md",
+                "file": "ChainOfTruthWorkflow/2-Implementasi/Simple Case Experiment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Apa itu Chain of Truth"
+              "title": "Simple Case Experiment"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ChainOfTruthWorkflow/Konsep/Apa itu Chain of Truth.md",
+                "file": "ChainOfTruthWorkflow/2-Implementasi/Simple Case Experiment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Apa itu Chain of Truth"
+              "title": "Backlinks for Simple Case Experiment"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ChainOfTruthWorkflow/Konsep/Apa itu Chain of Truth.md",
+                "file": "ChainOfTruthWorkflow/2-Implementasi/Simple Case Experiment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Apa itu Chain of Truth"
+              "title": "Outgoing links from Simple Case Experiment"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ChainOfTruthWorkflow/Konsep/Apa itu Chain of Truth.md",
+                "file": "ChainOfTruthWorkflow/2-Implementasi/Simple Case Experiment.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Apa itu Chain of Truth"
+              "title": "Outline of Simple Case Experiment"
             }
           }
         ]
@@ -185,15 +185,17 @@
   },
   "active": "0346177c483a7425",
   "lastOpenFiles": [
-    "fase.md",
-    "ChainOfTruthWorkflow/Konsep/Apa itu Chain of Truth.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 7 - Testing and Validation.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 6 - Implementation.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 5 - Use Case Integration Contract (UCIC) Development.md",
     "ChainOfTruthWorkflow/Welcome.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 4 - Data Model Development.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 3 - High-Fidelity Prototype Development.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 2 - Product Structure Development.md",
-    "ChainOfTruthWorkflow/Konsep/Fase 1 - Pengembangan SRS.md"
+    "ChainOfTruthWorkflow/2-Implementasi/Simple Case Experiment.md",
+    "ChainOfTruthWorkflow/2-Implementasi",
+    "ChainOfTruthWorkflow/1-Konsep/Apa itu Chain of Truth.md",
+    "fase.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 7 - Testing and Validation.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 6 - Implementation.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 5 - Use Case Integration Contract (UCIC) Development.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 4 - Data Model Development.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 3 - High-Fidelity Prototype Development.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 2 - Product Structure Development.md",
+    "ChainOfTruthWorkflow/1-Konsep/Fase 1 - Pengembangan SRS.md"
   ]
 }

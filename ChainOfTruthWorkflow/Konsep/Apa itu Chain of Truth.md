@@ -10,7 +10,7 @@ Tujuan utama Chain of Truth adalah meningkatkan **traceability, consistency, rep
 
 Chain of Truth terdiri dari tujuh fase utama yang membentuk rantai Source of Truth dari ide hingga perangkat lunak yang siap dirilis.
 
-![[https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Chain%20of%20Truth%20Software%20Dev%20Method-Page-1.drawio.png]]
+![sot](https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Chain%20of%20Truth%20Software%20Dev%20Method-Page-1.drawio.png)
 
 ### 1. Software Requirements Specification (SRS)
 

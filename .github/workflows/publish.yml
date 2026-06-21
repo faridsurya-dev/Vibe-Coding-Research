@@ -22,15 +22,15 @@ jobs:
           node-version: '24'
       - name: Build ID (root)
         run: >-
-          npx --yes  @faridsurya-dev/Vibe-Coding-Research build
+          npx --yes @abstractwebunit/markdown-publish build
           --vault vault/id --out _site
-          --base-href "/Vibe-Coding-Research build/"
+          --base-href "/Vibe-Coding-Research/"
           --site-url "$BASE"
           --site-name Vibe-Coding-Research --site-lang id
           --site-description "Workflow untuk pengembangan perangkat lunak di era AI, terinspirasi oleh prinsip-prinsip metode ilmiah dan konsep 'rantai kebenaran'."
       - name: Build EN
         run: >-
-          npx --yes @faridsurya-dev/Vibe-Coding-Research build
+          npx --yes @abstractwebunit/markdown-publish build
           --vault vault/en --out _site/en
           --base-href "/Vibe-Coding-Research/en/"
           --site-url "$BASE/en"

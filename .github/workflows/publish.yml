@@ -1,4 +1,4 @@
-name: Publish site
+name: Publish docs
 on:
   push:
     branches: [main]
@@ -10,17 +10,35 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: true
+env:
+  BASE: https://faridsurya-dev.github.io/Vibe-Coding-Research
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: abstractwebunit/markdown-publish@v1
+      - uses: actions/setup-node@v4
         with:
-          vault-dir: ChainOfTruthWorkflow
-          base-href: "/${{ github.event.repository.name }}/"
-          site-url: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          site-lang: en
+          node-version: '22'
+      - name: Build ID (root)
+        run: >-
+          npx --yes  @faridsurya-dev/Vibe-Coding-Research build
+          --vault vault/id --out _site
+          --base-href "/Vibe-Coding-Research build/"
+          --site-url "$BASE"
+          --site-name Vibe-Coding-Research --site-lang id
+          --site-description "Workflow untuk pengembangan perangkat lunak di era AI, terinspirasi oleh prinsip-prinsip metode ilmiah dan konsep 'rantai kebenaran'."
+      - name: Build EN
+        run: >-
+          npx --yes @faridsurya-dev/Vibe-Coding-Research build
+          --vault vault/en --out _site/en
+          --base-href "/Vibe-Coding-Research/en/"
+          --site-url "$BASE/en"
+          --site-name Vibe-Coding-Research --site-lang en --home "Welcome"
+          --site-description "A workflow for software development in the age of AI, inspired by the principles of the scientific method and the concept of a 'chain of truth'."      
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
   deploy:
     needs: build
     runs-on: ubuntu-latest

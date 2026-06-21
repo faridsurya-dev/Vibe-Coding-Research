@@ -1,94 +1,89 @@
 # Chain of Truth in Practice #1
 
-## Building a Frontend Web Application from Source of Truth
+## Membangun Aplikasi Web Frontend dari Source of Truth
 
-> **With Chain of Truth, AI no longer depends on prompts. It depends on Source of Truth.**
+> **Dengan Chain of Truth, AI tidak lagi bergantung pada prompt. Ia bergantung pada Source of Truth.**
 
+## 🚀 Coba Sendiri
 
-## 🚀 Try It Yourself
+Studi kasus implementasi ini sepenuhnya dapat direproduksi.
 
-This implementation case study is fully reproducible.
-
-Source of Truth artifacts used in this experiment are available here:
+Artefak Source of Truth yang digunakan dalam eksperimen ini tersedia di sini:
 
 Repository:
 https://github.com/faridsurya-dev/vibe_coding_simple_case
 
-You can inspect the documents, use them with your preferred AI coding assistant, and compare the results yourself. The image below is the result using Bigpickle model, an opersource model accessed with opencode.
+Anda dapat memeriksa dokumen-dokumen tersebut, menggunakannya dengan AI coding assistant pilihan Anda, dan membandingkan hasilnya sendiri. Gambar di bawah ini adalah hasil menggunakan model Bigpickle, sebuah model open source yang diakses dengan opencode.
 
-![cahsier app](https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Screenshot%202026-06-21%20133741.png)
+![aplikasi kasir](https://raw.githubusercontent.com/faridsurya-dev/public-images/refs/heads/main/Screenshot%202026-06-21%20133741.png)
 
+# Pendahuluan
 
-# Introduction
+Salah satu tantangan terbesar dalam pengembangan perangkat lunak berbantuan AI adalah konsistensi.
 
-One of the biggest challenges in AI-assisted software development is consistency.
+Sebagian besar alur kerja vibe coding sangat bergantung pada prompt. Requirement, aturan bisnis, keputusan UI, dan detail implementasi secara bertahap terakumulasi di dalam percakapan.
 
-Most vibe coding workflows rely heavily on prompts. Requirements, business rules, UI decisions, and implementation details are gradually accumulated inside conversations.
+Pendekatan ini berhasil untuk eksperimen kecil, tetapi masalah muncul seiring pertumbuhan proyek:
 
-This approach works well for small experiments, but problems emerge as projects grow:
+* Requirement tersebar di berbagai chat.
+* AI dapat menginterpretasikan fitur yang sama secara berbeda dari waktu ke waktu.
+* Konteks hilang saat memulai sesi baru.
+* Model yang berbeda dapat menghasilkan implementasi yang berbeda.
+* Validasi menjadi subjektif.
 
-* Requirements become scattered across chats.
-* AI may interpret the same feature differently over time.
-* Context is lost when starting a new session.
-* Different models may produce different implementations.
-* Validation becomes subjective.
+Chain of Truth (CoT) diciptakan untuk mengatasi masalah ini.
 
-Chain of Truth (CoT) was created to address this problem.
+Alih-alih menyimpan pengetahuan proyek di dalam prompt, CoT memindahkan pengetahuan ke dalam artefak terstruktur yang disebut **Sources of Truth (SoT)**.
 
-Instead of storing project knowledge inside prompts, CoT moves knowledge into structured artifacts called **Sources of Truth (SoT)**.
+Studi kasus ini mendemonstrasikan bagaimana CoT digunakan untuk membangun aplikasi web frontend yang lengkap dengan integrasi API dummy, sambil menjaga prompt tetap minimal dan implementasi tetap konsisten.
 
-This case study demonstrates how CoT was used to build a complete frontend web application with dummy API integration while keeping prompts minimal and implementation consistent.
+# Tujuan
 
+Tujuan dari implementasi ini bukan untuk membangun aplikasi POS.
 
-# Objective
+Tujuannya adalah untuk memvalidasi hipotesis berikut:
 
-The objective of this implementation was not to build a POS application.
+> Source of Truth yang cukup detail dapat memandu AI coding assistant untuk mengimplementasikan aplikasi tanpa memerlukan prompt khusus fitur.
 
-The objective was to validate the following hypothesis:
+Aplikasi yang dihasilkan hanya berfungsi sebagai kendaraan untuk menguji alur kerja.
 
-> A sufficiently detailed Source of Truth can guide an AI coding assistant to implement an application without requiring feature-specific prompts.
+# Gambaran Proyek
 
-The resulting application serves only as a vehicle to test the workflow.
+## Aplikasi
 
-
-# Project Overview
-
-## Application
-
-Web-Based Point of Sale (POS)
+Point of Sale (POS) Berbasis Web
 
 ## Domain
 
-Retail
+Ritel
 
-## User Role
+## Peran Pengguna
 
-Cashier
+Kasir
 
-## Main Features
+## Fitur Utama
 
-### Sales Transaction
+### Transaksi Penjualan
 
 * Login
-* Product browsing
-* Cart management
+* Menelusuri produk
+* Manajemen keranjang
 * Checkout
-* Receipt printing
+* Cetak struk
 
-### Inventory Management
+### Manajemen Inventaris
 
-* Add product
-* Stock monitoring
+* Tambah produk
+* Pemantauan stok
 
-### Reporting
+### Pelaporan
 
-* Daily sales report
-* Monthly sales report
+* Laporan penjualan harian
+* Laporan penjualan bulanan
 
+# Alur Kerja Chain of Truth
 
-# Chain of Truth Workflow
-
-The complete Chain of Truth workflow begins with an SRS.
+Alur kerja Chain of Truth yang lengkap dimulai dengan SRS.
 
 ```text
 SRS
@@ -104,99 +99,93 @@ UCIC / System Logics
 Implementation
 ```
 
-However, during implementation the coding assistant did not directly use the SRS.
+Namun, selama implementasi, coding assistant tidak langsung menggunakan SRS.
 
-The implementation phase consumed only the operational artifacts:
+Fase implementasi hanya mengonsumsi artefak operasional:
 
 * Information Architecture
 * Design System
 * User Flows
 * UCIC (System Logics)
 
-These artifacts acted as the implementation-level Source of Truth.
+Artefak-artefak ini bertindak sebagai Source of Truth tingkat implementasi.
 
-
-# Source of Truth Artifacts
+# Artefak Source of Truth
 
 ## 1. Information Architecture (IA)
 
-The IA defines:
+IA mendefinisikan:
 
-* Pages
-* Navigation hierarchy
-* Routing structure
-* Relationships between screens
+* Halaman
+* Hierarki navigasi
+* Struktur routing
+* Hubungan antar layar
 
-The IA answers:
+IA menjawab:
 
-> What pages exist in the application?
-
+> Halaman apa saja yang ada dalam aplikasi?
 
 ## 2. Design System
 
-The Design System defines:
+Design System mendefinisikan:
 
-* Visual language
-* Components
-* Layout rules
-* UI consistency standards
+* Bahasa visual
+* Komponen
+* Aturan tata letak
+* Standar konsistensi UI
 
-The Design System answers:
+Design System menjawab:
 
-> How should the application look?
-
+> Bagaimana tampilan aplikasi?
 
 ## 3. User Flows
 
-User Flows define:
+User Flows mendefinisikan:
 
-* User interactions
-* Main flows
-* Alternative flows
-* Exception flows
+* Interaksi pengguna
+* Alur utama
+* Alur alternatif
+* Alur pengecualian
 
-User Flows answer:
+User Flows menjawab:
 
-> How should the application behave?
-
+> Bagaimana perilaku aplikasi?
 
 ## 4. UCIC (System Logics)
 
-UCIC defines:
+UCIC mendefinisikan:
 
-* System behavior
-* Interaction contracts
-* Application logic
-* API expectations
+* Perilaku sistem
+* Kontrak interaksi
+* Logika aplikasi
+* Ekspektasi API
 
-UCIC answers:
+UCIC menjawab:
 
-> What should happen behind the interface?
+> Apa yang seharusnya terjadi di balik antarmuka?
 
-
-# Development Environment
+# Lingkungan Pengembangan
 
 ## IDE
 
 OpenCode
 
-## Models
+## Model
 
 * Bigpickle
 * DeepSeek V4 Flash
 
-## Session Strategy
+## Strategi Sesi
 
-Single session.
+Sesi tunggal.
 
-The entire implementation was completed within a single development session.
+Seluruh implementasi diselesaikan dalam satu sesi pengembangan.
 
+# Prompt-nya
 
-# The Prompts
+Salah satu hasil yang paling mengejutkan dari eksperimen ini adalah kesederhanaan prompt.
 
-One of the most surprising results of this experiment was the simplicity of the prompts.
-
-Only three user prompts were used.
+Hanya tiga prompt pengguna yang digunakan.
 
 ## Prompt 1
 
@@ -204,13 +193,11 @@ Only three user prompts were used.
 Create a blank starter app using latest nextjs in 'pos_simple_[model_name]' folder.
 ```
 
-
 ## Prompt 2
 
 ```text
 Based on @docs/design_system.md and @docs/information_architecture.md, create the application's pages and navigations structure.
 ```
-
 
 ## Prompt 3
 
@@ -218,25 +205,23 @@ Based on @docs/design_system.md and @docs/information_architecture.md, create th
 Implement the application's functionality in detail based on docs/user_flows/* and docs/system_logics/*, using dummy API calls where needed.
 ```
 
+Perhatikan apa yang tidak ada.
 
-Notice what is missing.
+Prompt tersebut tidak mengandung:
 
-The prompts do not contain:
+* requirement bisnis
+* deskripsi fitur
+* aturan validasi
+* spesifikasi UI
+* logika aplikasi
 
-* business requirements
-* feature descriptions
-* validation rules
-* UI specifications
-* application logic
+Detail-detail itu sudah ada di dalam Source of Truth.
 
-Those details already exist inside the Source of Truth.
+Prompt hanya menginstruksikan AI untuk mengeksekusi.
 
-The prompts merely instruct the AI to execute.
+# Dari Pengembangan Berbasis Prompt ke Pengembangan Berbasis Source of Truth
 
-
-# From Prompt-Driven Development to Source-of-Truth-Driven Development
-
-Traditional vibe coding often looks like this:
+Vibe coding tradisional sering terlihat seperti ini:
 
 ```text
 Requirement
@@ -245,18 +230,18 @@ Prompt
  ↓
 AI
  ↓
-Prompt Revision
+Revisi Prompt
  ↓
 AI
  ↓
-More Prompts
+Prompt Lainnya
  ↓
 AI
 ```
 
-Over time, project knowledge becomes distributed across conversations.
+Seiring waktu, pengetahuan proyek tersebar di berbagai percakapan.
 
-Chain of Truth changes the workflow:
+Chain of Truth mengubah alur kerja:
 
 ```text
 Requirement
@@ -266,54 +251,51 @@ Source of Truth
 AI
 ```
 
-The Source of Truth becomes the carrier of knowledge.
+Source of Truth menjadi pembawa pengetahuan.
 
-Prompts become execution instructions.
+Prompt menjadi instruksi eksekusi.
 
-This shift is the core idea behind Chain of Truth.
+Pergeseran ini adalah inti dari Chain of Truth.
 
+# Hasil Pengembangan
 
-# Development Results
+AI coding assistant berhasil menghasilkan:
 
-The AI coding assistant successfully generated:
+* Aplikasi frontend yang lengkap
+* Navigasi aplikasi
+* Layar UI
+* Interaksi pengguna
+* Integrasi API dummy
+* Alur kerja ujung-ke-ujung
 
-* Complete frontend application
-* Application navigation
-* UI screens
-* User interactions
-* Dummy API integration
-* End-to-end workflows
+Aplikasi yang dihasilkan sepenuhnya dapat dinavigasi dan berfungsi dalam ruang lingkup yang ditentukan.
 
-The resulting application was fully navigable and functional within the defined scope.
+# Intervensi Manusia
 
+Pengamatan penting selama eksperimen adalah sifat intervensi pengguna.
 
-# Human Intervention
+Pesan tambahan hanya diperlukan ketika terjadi masalah teknis eksekusi, seperti:
 
-An important observation during the experiment was the nature of user intervention.
+* kegagalan pembuatan file
+* masalah akses model sementara
+* gangguan konektivitas
 
-Additional messages were required only when technical execution issues occurred, such as:
+Perbaikannya hanya dengan menyalin dan menempelkan pesan error.
 
-* file generation failures
-* temporary model access issues
-* connectivity interruptions
+Tidak ada prompt tambahan yang diperlukan untuk menjelaskan:
 
-The fixes consisted of simply copying and pasting error messages.
+* fitur
+* aturan bisnis
+* alur kerja
+* persyaratan validasi
 
-No additional prompts were needed to explain:
+Ini menunjukkan bahwa Source of Truth menyediakan konteks implementasi yang memadai.
 
-* features
-* business rules
-* workflows
-* validation requirements
+# Strategi Validasi
 
-This indicates that the Source of Truth provided sufficient implementation context.
+Validasi tidak dilakukan hanya melalui inspeksi visual.
 
-
-# Validation Strategy
-
-Validation was not performed through visual inspection alone.
-
-Instead, test cases were derived from:
+Sebaliknya, test case diturunkan dari:
 
 ```text
 SRS
@@ -323,125 +305,118 @@ User Flows
 Test Cases
 ```
 
-This created an independent validation layer.
+Ini menciptakan lapisan validasi yang independen.
 
-The implementation was evaluated against predefined expectations rather than subjective judgment.
+Implementasi dievaluasi terhadap ekspektasi yang telah ditentukan sebelumnya, bukan berdasarkan penilaian subjektif.
 
+# Hasil Pengujian
 
-# Test Results
-
-## Total Test Cases
+## Total Test Case
 
 30
 
-## Passed
+## Lulus
 
-100% of applicable frontend test cases
+100% test case frontend yang berlaku
 
-## Failed
+## Gagal
 
 0
 
-## Excluded
+## Dikecualikan
 
-Test cases requiring a real backend implementation
+Test case yang memerlukan implementasi backend nyata
 
-The result demonstrates that the generated application was consistent with the requirements captured in the Source of Truth.
+Hasilnya menunjukkan bahwa aplikasi yang dihasilkan konsisten dengan kebutuhan yang tertangkap di Source of Truth.
 
+# Temuan Utama
 
-# Key Findings
+## Temuan #1 — Manfaat Terbesar Adalah Konsistensi
 
-## Finding #1 — The Biggest Benefit Was Consistency
+Manfaat paling signifikan yang diamati bukanlah kecepatan.
 
-The most significant benefit observed was not speed.
+Melainkan konsistensi.
 
-It was consistency.
+Sebelum Chain of Truth:
 
-Before Chain of Truth:
+* requirement berada dalam percakapan
+* pergeseran konteks sering terjadi
+* implementasi fitur menjadi tidak konsisten
 
-* requirements lived in conversations
-* context drift occurred frequently
-* feature implementations became inconsistent
+Setelah Chain of Truth:
 
-After Chain of Truth:
+* requirement berada dalam artefak
+* implementasi menjadi dapat dilacak
+* konteks tetap stabil
+* perilaku AI menjadi lebih dapat diprediksi
 
-* requirements lived in artifacts
-* implementation became traceable
-* context remained stable
-* AI behavior became more predictable
+## Temuan #2 — Prompt Menjadi Lebih Kecil
 
+Pengurangan kompleksitas prompt adalah efek samping.
 
-## Finding #2 — Prompts Became Smaller
+Pencapaian sesungguhnya adalah memindahkan pengetahuan proyek keluar dari prompt dan ke dalam artefak.
 
-The reduction in prompt complexity was a side effect.
+Hasilnya:
 
-The real achievement was moving project knowledge out of prompts and into artifacts.
+* prompt menjadi lebih pendek
+* sesi menjadi dapat direproduksi
+* model menjadi dapat dipertukarkan
 
-As a result:
+## Temuan #3 — Validasi Menjadi Objektif
 
-* prompts became shorter
-* sessions became reproducible
-* models became interchangeable
-
-
-## Finding #3 — Validation Became Objective
-
-Without a Source of Truth:
+Tanpa Source of Truth:
 
 ```text
-Does the application look correct?
+Apakah tampilan aplikasi sudah benar?
 ```
 
-With a Source of Truth:
+Dengan Source of Truth:
 
 ```text
-Does the implementation satisfy the test cases?
+Apakah implementasi memenuhi test case?
 ```
 
-This is a fundamentally different validation model.
+Ini adalah model validasi yang fundamentally berbeda.
 
+# Mengapa Ini Penting
 
-# Why This Matters
+Banyak alur kerja pengembangan berbantuan AI mengoptimalkan prompt.
 
-Many AI-assisted development workflows optimize prompts.
+Chain of Truth mengoptimalkan konteks.
 
-Chain of Truth optimizes context.
+Prompt engineering berusaha meningkatkan komunikasi dengan AI.
 
-Prompt engineering attempts to improve communication with AI.
+Chain of Truth berusaha meningkatkan kualitas dan struktur pengetahuan yang diberikan kepada AI.
 
-Chain of Truth attempts to improve the quality and structure of the knowledge provided to AI.
+Perbedaannya halus namun penting.
 
-The distinction is subtle but important.
+Ketika konteks dapat diandalkan, prompt menjadi sederhana.
 
-When context is reliable, prompts become simple.
+Ketika konteks tidak dapat diandalkan, prompt engineering menjadi tidak ada habisnya.
 
-When context is unreliable, prompt engineering becomes endless.
+# Kesimpulan
 
+Eksperimen ini mendemonstrasikan bahwa aplikasi web frontend dapat diimplementasikan dengan sukses menggunakan Chain of Truth dengan prompt yang minimal.
 
-# Conclusion
+Coding assistant hanya menerima tiga prompt yang berorientasi pada eksekusi dan mengandalkan artefak Source of Truth untuk semua keputusan fungsional dan perilaku.
 
-This experiment demonstrates that a frontend web application can be implemented successfully using Chain of Truth with minimal prompting.
+Aplikasi yang dihasilkan:
 
-The coding assistant received only three execution-oriented prompts and relied on Source of Truth artifacts for all functional and behavioral decisions.
+* sepenuhnya dapat dinavigasi
+* mengimplementasikan alur kerja yang dimaksudkan
+* mengintegrasikan API dummy
+* lulus semua test case frontend yang berlaku
 
-The resulting application:
+Yang terpenting, eksperimen menunjukkan bahwa:
 
-* was fully navigable
-* implemented the intended workflows
-* integrated dummy APIs
-* passed all applicable frontend test cases
+> **Dengan Chain of Truth, AI tidak lagi bergantung pada prompt. Ia bergantung pada Source of Truth.**
 
-Most importantly, the experiment showed that:
+# Dukung Penelitian
 
-> **With Chain of Truth, AI no longer depends on prompts. It depends on Source of Truth.**
+Chain of Truth adalah inisiatif penelitian independen yang berfokus pada peningkatan pengembangan perangkat lunak berbantuan AI.
 
-
-# Support the Research
-
-Chain of Truth is an independent research initiative focused on improving AI-assisted software development.
-
-If this work helps you, consider supporting future research and experiments:
+Jika karya ini membantu Anda, pertimbangkan untuk mendukung penelitian dan eksperimen di masa depan:
 
 https://saweria.co/faridsurya
 
-Every contribution helps fund additional experiments, documentation, tooling, and open-source resources for the community.
+Setiap kontribusi membantu mendanai eksperimen tambahan, dokumentasi, perangkat, dan sumber daya open source untuk komunitas.

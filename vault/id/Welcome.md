@@ -1,5 +1,9 @@
 ## Pengantar Penulis
 
+> [!info] Languages / Bahasa
+> [Indonesia](https://faridsurya-dev.github.io/Vibe-Coding-Research/) · [English](https://faridsurya-dev.github.io/Vibe-Coding-Research/en/)
+
+
 Saya percaya AI akan mengubah cara kita membangun perangkat lunak.
 
 Hari ini, AI mampu membantu menyusun requirement, membuat desain, menghasilkan kode, hingga menulis test case. Kecepatan yang dihasilkan sangat luar biasa. Namun dari pengalaman saya menggunakan AI dalam berbagai proyek, saya menemukan bahwa tantangan terbesar bukan lagi bagaimana menghasilkan kode lebih cepat.

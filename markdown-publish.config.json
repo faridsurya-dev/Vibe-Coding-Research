@@ -1,8 +1,9 @@
 {
-  "siteName": "Chain of Truth Workflow",
+  "siteName": "CoT-Workflow",
   "siteDescription": "A workflow for software development in the age of AI, inspired by the principles of the scientific method and the concept of a 'chain of truth'.",
-  "siteLang": "en",
-  "vaultDir": "ChainOfTruthWorkflow",
+  "siteLang": "id",
+  "vaultDir": "vault/id",
+  "siteFooter": "faridsurya-dev",
   "buildMode": "full",
   "out": "dist"
 }
